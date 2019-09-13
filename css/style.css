@@ -1,0 +1,155 @@
+body {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+}
+
+.container {
+  max-width: 95%;
+}
+
+.add-box-window {
+  background-color: rgba(255, 255, 255, 0.808);
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+}
+
+.add-box-window.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.add-box-window .form-container {
+  background-color: #cccccc;
+  padding: 15px;
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 15;
+}
+
+.add-box-window .prev-container {
+  background-color: #d6d5d5;
+  border: dashed 2px #b9b9b9;
+  min-height: 250px;
+  box-sizing: border-box;
+  display: block;
+  position: relative;  
+  overflow: hidden;
+}
+
+.add-box-window .prev-container img {  
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: scale(1.4, 1);
+  height: 100%;
+}
+
+.add-box-window .form-container .close-window,
+.add-box-window .form-container .add-tile {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.add-box-window .form-container .close-window {
+  right: 150px;
+}
+
+.add-box-window .form-container .custom-btn {
+  margin-right: 10px;
+}
+
+.tile {
+  background-color: #cccccc;
+  height: 250px;
+  width: 250px;
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.tile img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: scale(1.4, 1);
+  height: 100%;
+}
+
+.tile .hover-overlay {
+  background-color: rgb(18, 14, 53, 0.84);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 100%;
+  top: 100%;
+  transition: ease-in-out 0.3s;
+}
+
+.tile .hover-overlay .fa-search-plus {
+    color: #423d67;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+}
+
+.tile:hover .hover-overlay {
+  right: 0;
+  top: 0;
+}
+
+.tile:hover .hover-overlay a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.tile:hover .hover-overlay .del-btn,
+.tile:hover .hover-overlay .edit-btn {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 12px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
+
+/* .tile:hover .hover-overlay .del-btn {
+  right: 10px;
+  top: 10px;
+}
+
+.tile:hover .hover-overlay .edit-btn {
+  right: 36px;
+  top: 10px;
+} */
+
+.tile:hover .hover-overlay h4 {
+  color: #ffffff;
+  font-weight: 300;
+}
